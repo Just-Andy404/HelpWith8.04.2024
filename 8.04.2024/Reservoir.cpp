@@ -84,6 +84,7 @@ void Reservoir::input()
     char* NewName = new char[255];
     char* type = new char[255];
 
+    cin.ignore();
     cout << "Input name: ";
     cin.getline(NewName, 255);
     SetsName(NewName);
@@ -100,12 +101,13 @@ void Reservoir::input()
     cin >> maximum_depth;
     SetMaximum_depth(maximum_depth);
 
+    cin.ignore();
     cout << "Input type: ";
     cin.getline(type, 255);
     SetType(type);
 }
 
-Reservoir Reservoir::add(Reservoir*& array, int& size)
+void Reservoir::add(Reservoir*& array, int& size)
 {
     Reservoir* newArray = new Reservoir[size + 1];
 
@@ -123,5 +125,6 @@ Reservoir Reservoir::add(Reservoir*& array, int& size)
     delete[] array;
 
     array = newArray;
+    
 }
 

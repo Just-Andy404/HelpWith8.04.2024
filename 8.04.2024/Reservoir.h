@@ -43,7 +43,7 @@ public:
     bool ater_bodies_belong_to_the_same_type(Reservoir& other);
     void output();
     void input();
-    Reservoir add(Reservoir*& array, int& size);
+    void add(Reservoir*& array, int& size);
 
     char* getName()
     {
@@ -66,32 +66,26 @@ public:
         return type;
     }
 
-    char SetsName(char* n)
+    void SetsName(char* n)
     {
         int size = strlen(n);
         this->sName = new char[size + 1];
-        for (int i = 0; i < size + 1; i++) {
-            this->sName[i] = n[i];
-            if (n[i] == '\0') {
-                this->sName[i] = '\0';
-                break;
-            }
-        }
-
+        strcpy_s(this->sName, size+1, n);
+        delete[] n;
     }
-    int SetWidth(int width)
+    void SetWidth(int width)
     {
         this->width = width;
     }
-    int SetLength(int length)
+    void SetLength(int length)
     {
         this->length = length;
     }
-    int SetMaximum_depth(int maximum_depth)
+    void SetMaximum_depth(int maximum_depth)
     {
         this->maximum_depth = maximum_depth;
     }
-    char SetType(char* type)
+    void SetType(char* type)
     {
         int size = strlen(type);
         this->sName = new char[size + 1];
