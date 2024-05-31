@@ -52,7 +52,7 @@ int main() {
             list->input();
             cout << "================================\n";
             isInitializer = true;
-            list->add(list, size);
+            list->add(list, howMany_Items);
             break;
         case 2:
             for (int i = 0; i < howMany_Items; i++)
@@ -60,21 +60,25 @@ int main() {
                 list[i].output();
                 cout << "================================\n";
             }
+            break;
         case 3:
             for (int i = 0; i < howMany_Items; i++)
             {
                 cout << "approximate volume output is " << list[i].Determining_the_approximate_volume();
             }
+            break;
         case 4:
             for (int i = 0; i < howMany_Items; i++)
             {
                 cout << "Determination of water surface area is " << list[i].water_surface_area();
             }
+            break;
         case 5:
             for (int i = 0; i < howMany_Items; i++)
             {
                 cout << "Determination of water surface area is " << list[i].water_surface_area();
             }
+            break;
         case 6:
             for (int i = 0; i < howMany_Items; i++)
             {
@@ -90,6 +94,7 @@ int main() {
                         " it's not the same type.";
                 }
             }
+            break;
         case 7:
             for (int i = 0; i < howMany_Items; i++)
             {
@@ -104,6 +109,7 @@ int main() {
                         " it's not the same type.";
                 }
             }
+            break;
         default:
             cout << "Invalid choice, try again." << endl;
         }

@@ -65,14 +65,6 @@ public:
     {
         return type;
     }
-
-    void SetsName(char* n)
-    {
-        int size = strlen(n);
-        this->sName = new char[size + 1];
-        strcpy_s(this->sName, size+1, n);
-        delete[] n;
-    }
     void SetWidth(int width)
     {
         this->width = width;
@@ -85,16 +77,18 @@ public:
     {
         this->maximum_depth = maximum_depth;
     }
-    void SetType(char* type)
+
+    void SetsName(char* n)
     {
-        int size = strlen(type);
+        int size = strlen(n);
         this->sName = new char[size + 1];
-        for (int i = 0; i < size + 1; i++) {
-            this->sName[i] = type[i];
-            if (type[i] == '\0') {
-                this->sName[i] = '\0';
-                break;
-            }
-        }
+        strcpy_s(this->sName, size + 1, n);
+    }
+
+    void SetType(char* n)
+    {
+        int size = strlen(n);
+        this->type = new char[size + 1];
+        strcpy_s(this->type, size + 1, n);
     }
 };

@@ -110,8 +110,8 @@ void Reservoir::input()
 void Reservoir::add(Reservoir*& array, int& size)
 {
     Reservoir* newArray = new Reservoir[size + 1];
-
-    for (int i = 0; i < size; ++i) {
+    size++;
+    for (int i = 1; i < size; ++i) {
         newArray[i].SetLength(array[i].getLength());
         newArray[i].SetWidth(array[i].getWidth());
         newArray[i].SetMaximum_depth(array[i].getMaximumDepth());
@@ -119,9 +119,7 @@ void Reservoir::add(Reservoir*& array, int& size)
         newArray[i].SetType(array[i].getType());
 
     }
-    newArray = newArray;
 
-    size++;
     delete[] array;
 
     array = newArray;
